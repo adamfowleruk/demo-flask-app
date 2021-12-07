@@ -16,7 +16,7 @@ RUN pip install -r requirements.txt
 
 COPY setup.py .
 COPY flask-time-api .
-RUN pip --no-cache-dir install .
+RUN pip -v install .
 
 # Phase 2 - Run
 FROM $BASE_IMAGE as run-image
