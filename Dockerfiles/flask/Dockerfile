@@ -4,7 +4,7 @@ ARG BASE_IMAGE=python:3.7-slim
 
 # Phase 1 - Build
 FROM python:3.7-slim AS compile-image
-#RUN apt-get update
+RUN apt-get update
 RUN apt-get install -y --no-install-recommends build-essential gcc
 
 RUN python -m venv /opt/venv
