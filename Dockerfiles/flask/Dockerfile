@@ -14,7 +14,7 @@ ENV PATH="/opt/venv/bin:$PATH"
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
-#COPY setup.py .
+COPY setup.py .
 COPY flask-time-api .
 RUN pip --no-cache-dir install .
 
