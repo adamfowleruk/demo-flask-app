@@ -8,14 +8,14 @@ RUN apt-get update && \
   apt-get install -y --no-install-recommends build-essential gcc && \
   apt-get clean
 
-RUN python -m venv /opt/venv
+RUN python3 -m venv /opt/venv
 # Make sure we use the virtualenv:
 ENV PATH="/opt/venv/bin:$PATH"
 
 WORKDIR /usr/src/app
 
 COPY requirements.txt .
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
 #COPY setup.py .
 #COPY flask-time-api .
