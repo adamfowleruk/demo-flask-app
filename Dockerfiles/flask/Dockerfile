@@ -1,3 +1,5 @@
+# WARNING - Do not use. Use demo-base-images/flaskbase then flaskonbase from this repo instead
+
 # Args
 ARG BASE_IMAGE=python:3.7-slim
 # OR myorg/myapp:latest if overriding via ARGs in Docker build
