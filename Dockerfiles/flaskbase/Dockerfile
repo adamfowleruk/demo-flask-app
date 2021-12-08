@@ -3,7 +3,7 @@ ARG BASE_IMAGE=python:3.7-slim
 # OR myorg/myapp:latest if overriding via ARGs in Docker build
 
 # Phase 1 - Build
-FROM python:3.7-slim AS compile-image
+FROM $BASE_IMAGE AS compile-image
 RUN apt-get update && \
   apt-get install -y --no-install-recommends build-essential gcc && \
   apt-get clean
