@@ -5,8 +5,8 @@ ARG BASE_IMAGE=python:3.7-slim
 # Phase 1 - Build
 FROM python:3.7-slim AS compile-image
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends build-essential gcc && \
-    apt-get clean
+  apt-get install -y --no-install-recommends build-essential gcc && \
+  apt-get clean
 
 RUN python -m venv /opt/venv
 # Make sure we use the virtualenv:
@@ -18,7 +18,7 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 #COPY setup.py .
-COPY flask-time-api .
+#COPY flask-time-api .
 #RUN pip -v install .
 
 # Phase 2 - Run
@@ -28,4 +28,6 @@ COPY --from=compile-image /usr/src/app /usr/src/app
 WORKDIR /usr/src/app
 # Make sure we use the virtualenv:
 ENV PATH="/opt/venv/bin:$PATH"
-CMD ["python3","app.py"]
+
+# This will be done in the execution image Dockerfile only:-
+#CMD ["python3","app.py"]
