@@ -7,7 +7,7 @@ WORKDIR /usr/src/app
 ENV PATH="/opt/venv/bin:$PATH"
 
 # Copy actual app over
-COPY $APP_FOLDER/* .
+COPY flask-time-api/* .
 
 # This will be done in the execution image Dockerfile only:-
 CMD ["python3","app.py"]
