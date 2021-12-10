@@ -10,4 +10,4 @@ ENV PATH="/opt/venv/bin:$PATH"
 COPY flask-time-api/* .
 
 # This will be done in the execution image Dockerfile only:-
-CMD ["python3","app.py"]
+CMD ["flask","run","--no-debugger"]
