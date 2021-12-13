@@ -10,4 +10,4 @@ ENV PATH="/opt/venv/bin:$PATH"
 COPY ${APP_FOLDER}/* .
 
 # This will be done in the execution image Dockerfile only:-
-CMD ["flask","run","--no-debugger"]
+CMD ["python3","app.py","--no-debugger"]
